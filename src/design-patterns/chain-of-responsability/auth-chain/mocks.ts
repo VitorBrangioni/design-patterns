@@ -1,4 +1,4 @@
-import { User } from ".";
+import { User } from "./interfaces";
 
 export interface Users {
     [token: string]: User;

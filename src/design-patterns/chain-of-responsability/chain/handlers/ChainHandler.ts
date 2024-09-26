@@ -1,4 +1,3 @@
-import { IChainHandler } from "../interfaces";
 
 abstract class ChainHandler<T> {
     nextHandler: ChainHandler<T>;

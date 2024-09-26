@@ -1,5 +1,5 @@
 import { AuthData } from "../interfaces";
-import ChainHandler from "./ChainHandler";
+import ChainHandler from "../../chain/handlers/ChainHandler";
 
 
 class IpWhitelistingHandler extends ChainHandler<AuthData> {

@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "chain-of-responsability": "npx tsc && node dist/index.js"
+    "chain-of-responsability": "npx tsc && node dist/run-auth-chain.js"
   },
   "author": "Vitor Braggion",
   "license": "ISC",

@@ -1,4 +1,4 @@
-import Chain from "./Chain";
+import Chain from "../chain/Chain";
 import IpWhitelistingHandler from "./handlers/IpWhitelistingHandler";
 import TokenValidationHandler from "./handlers/TokenValidationHandler";
 import UserHandler from "./handlers/UserHandler";

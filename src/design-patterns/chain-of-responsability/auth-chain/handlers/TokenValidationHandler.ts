@@ -1,6 +1,6 @@
 import { AuthData } from "../interfaces";
-import { users } from "../interfaces/mocks";
-import ChainHandler from "./ChainHandler";
+import { users } from "../mocks";
+import ChainHandler from "../../chain/handlers/ChainHandler";
 
 // #1
 class TokenValidationHandler extends ChainHandler<AuthData> {
