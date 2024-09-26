@@ -1,16 +1,16 @@
 import ChainHandler from "./handlers/ChainHandler";
 import { IChainResponsability } from "./interfaces";
 
-abstract class Chain implements IChainResponsability {
-    orderedHandlers: ChainHandler[] = [];
+abstract class Chain<T> implements IChainResponsability<T> {
+    orderedHandlers: ChainHandler<T>[] = [];
 
-    constructor(handlers: ChainHandler[]) {
+    constructor(handlers: ChainHandler<T>[]) {
         this.orderedHandlers = handlers;
         
         this.setupHandlers();
     }
 
-    setOrderedHandlers(handlers: ChainHandler[]) {
+    setOrderedHandlers(handlers: ChainHandler<T>[]) {
         this.orderedHandlers = handlers;
     }
 
@@ -18,7 +18,7 @@ abstract class Chain implements IChainResponsability {
         return this.orderedHandlers;
     }
 
-    handle<AuthData>(data: AuthData) {
+    handle(data: T) {
         if (!this.orderedHandlers.length) {
             throw new Error('You should use a Handler at least');
         }

@@ -1,9 +1,9 @@
 import { IChainHandler } from "../interfaces";
 
-abstract class ChainHandler implements IChainHandler {
-    nextHandler: ChainHandler;
+abstract class ChainHandler<T> {
+    nextHandler: ChainHandler<T>;
 
-    handle<T>(data: T): T {
+    handle(data: T): T {
         if (this.nextHandler) {
             return this.nextHandler.handle(data);    
         }
@@ -14,7 +14,7 @@ abstract class ChainHandler implements IChainHandler {
         return this.nextHandler;
     }
 
-    setNextHandler(chainHandler: ChainHandler) {
+    setNextHandler(chainHandler: ChainHandler<T>) {
         this.nextHandler = chainHandler;
     }
 

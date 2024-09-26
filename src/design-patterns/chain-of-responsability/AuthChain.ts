@@ -1,14 +1,10 @@
 import Chain from "./Chain";
 import IpWhitelistingHandler from "./handlers/IpWhitelistingHandler";
 import TokenValidationHandler from "./handlers/TokenValidationHandler";
+import { AuthData } from "./interfaces";
 
-export interface AuthData {
-    username: string;
-    token: string;
-    ip: string;
-}
 
-class AuthChain extends Chain {
+class AuthChain extends Chain<AuthData> {
     constructor() {
         super([
             new TokenValidationHandler(),

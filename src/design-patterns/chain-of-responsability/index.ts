@@ -1,8 +1,9 @@
-import AuthChain, { AuthData } from "./AuthChain";
+import AuthChain from "./AuthChain";
+import { AuthData } from "./interfaces";
 
 (() => {
     const authData: AuthData = {
-        token: 'JIDSAJIDJAI',
+        token: 'ZZZ',
         ip: '0.0.0.0',
         username: 'vitor.braggion'
     };
@@ -10,4 +11,5 @@ import AuthChain, { AuthData } from "./AuthChain";
     const authChain = new AuthChain();
 
     authChain.handle(authData);
+    
 })();
