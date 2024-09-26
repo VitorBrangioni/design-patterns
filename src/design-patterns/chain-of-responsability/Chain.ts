@@ -28,7 +28,7 @@ abstract class Chain<T> implements IChainResponsability<T> {
     private setupHandlers() {
         for (let i = 0; i < this.orderedHandlers.length; i++) {
             const currentHandler = this.orderedHandlers[i];
-            const nextHandlerIndex = ++i;
+            const nextHandlerIndex = i + 1;
             const isThereNextHandler = (this.orderedHandlers.length !== nextHandlerIndex);
 
             if (isThereNextHandler) {

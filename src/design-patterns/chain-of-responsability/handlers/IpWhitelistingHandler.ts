@@ -1,12 +1,27 @@
 import { AuthData } from "../interfaces";
-import BaseHandler from "./ChainHandler";
+import ChainHandler from "./ChainHandler";
 
 
-class IpWhitelistingHandler extends BaseHandler<AuthData> {
+class IpWhitelistingHandler extends ChainHandler<AuthData> {
+
+    private trustedIPs: string[] = [
+        '0.0.0.0',
+        '3.3.3.3',
+        '7.7.7.7'
+    ];
+
+    private validateIp(data: AuthData) {
+        if (!this.trustedIPs.includes(data.ip)) {
+            throw new Error('IP Not Allowed!');
+        }
+    }
 
     handle(data: AuthData): AuthData {
         console.log('Executing IpWhitelistingHandler');
-        return null;
+
+        this.validateIp(data);
+
+        return super.handle(data);
     }
 
 }

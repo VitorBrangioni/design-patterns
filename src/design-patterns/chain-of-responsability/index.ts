@@ -3,13 +3,14 @@ import { AuthData } from "./interfaces";
 
 (() => {
     const authData: AuthData = {
-        token: 'ZZZ',
-        ip: '0.0.0.0',
+        token: 'TOKEN2',
+        ip: '3.3.3.3',
         username: 'vitor.braggion'
     };
 
     const authChain = new AuthChain();
 
-    authChain.handle(authData);
-    
+    const result = authChain.handle(authData);
+
+    console.log(result);
 })();

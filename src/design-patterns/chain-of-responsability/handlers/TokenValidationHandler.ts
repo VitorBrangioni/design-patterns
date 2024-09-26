@@ -1,11 +1,13 @@
 import { AuthData } from "../interfaces";
+import { users } from "../interfaces/mocks";
 import ChainHandler from "./ChainHandler";
 
 // #1
-class TokenValidationHandler extends ChainHandler<AuthData>  {
+class TokenValidationHandler extends ChainHandler<AuthData> {
 
     private validateToken(data: AuthData) {
-        if (data.token !== 'VALID_TOKEN') {
+
+        if (!users[data.token]) {
             throw new Error('Invalid Token');
         }
     }
