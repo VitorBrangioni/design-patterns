@@ -38,7 +38,11 @@ class Product {
             throw new Error('You cannot change the price less than 0');
         }
         this.price = price;
-        this.publisher.notify(this);
+
+        const clone = {...this};
+        delete clone.publisher;
+
+        this.publisher.notify(clone);
     }
 
 }
