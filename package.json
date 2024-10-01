@@ -6,7 +6,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "chain-of-responsability": "npx tsc && node dist/support/index.js"
+    "chain-of-responsability": "npx tsc && node dist/support/index.js",
+    "observer": "npx tsc && node dist/observer/index.js"
   },
   "author": "Vitor Braggion",
   "license": "ISC",
